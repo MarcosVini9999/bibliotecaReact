@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from "react";
+import api from "./services/shared/api";
+import List from "./components/list/index";
+import SearchBar from "./components/searchBar/index";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [books, setbooks] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const result = await api.get("/search?query=");
+      console.log(result.date);
+    };
+    getData();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return <></>;
 }
 
 export default App;
