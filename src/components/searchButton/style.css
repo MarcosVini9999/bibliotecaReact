@@ -1,0 +1,14 @@
+.btnSearch {
+  background-color: #d51000;
+  border: none;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  padding: 0.797rem;
+  border-style: outset;
+}
+.btnSearch:hover {
+  cursor: pointer;
+  background-color: #930b00;
+  border-style: inset;
+}

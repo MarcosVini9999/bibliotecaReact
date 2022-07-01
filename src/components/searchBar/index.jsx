@@ -1,9 +1,11 @@
-function SearchBar({searchTerm, setSearchTerm}){
-    return(
+import './style.css';
+import TextField from "@mui/material/TextField";
+function SearchBar({ searchTerm, setSearchTerm }) {
+    return (
         <>
-            <input value={searchTerm} onChange={(e)=>{
+            <TextField id="outlined-basic" label="Pesquisa" variant="outlined" value={searchTerm} onChange={(e) => {
                 setSearchTerm(e.target.value)
-            }}/>
+            }} />
         </>
     )
 }
