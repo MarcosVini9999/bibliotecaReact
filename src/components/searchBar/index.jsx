@@ -1,10 +1,9 @@
-function SearchBar(props){
+function SearchBar({searchTerm, setSearchTerm}){
     return(
         <>
-            <input value={props.searchTerm} onChange={(e)=>{
-                props.setSearchTerm(e.target.value)
-                console.log(e)    
-            }}></input>
+            <input value={searchTerm} onChange={(e)=>{
+                setSearchTerm(e.target.value)
+            }}/>
         </>
     )
 }

@@ -6,22 +6,21 @@ import SearchButton from "./components/searchButton/index";
 import "./App.css";
 
 function App() {
-  const [list, setList] = useState("");
+  const [list, setList] = useState([]);
   const [term, setTerm] = useState("");
-  const [btn, setbtn] = useState(false);
-  
-  useEffect(()=>{
-    const fetchData = async()=>{
-      const result = await api.get(`/search?query=${term}`);
-      setList(result?.data?.hits);
+  const fetchData = async()=>{
+      try{
+        const result = await api.get(`/search?query=${term}`);
+        setList(result.data.hits);
+      }catch{
+        setList([]);
+      }
     }
-    console.log(list)
-    fetchData();
-  },[btn])
   return (
     <>
       <SearchBar searchTerm={term} setSearchTerm={setTerm}/>
-      <SearchButton onButtonClick={()=>setbtn(btn=>!btn)}/>
+      <SearchButton onButtonClick={fetchData}/>
+      {list.length>0 ? <List list={list}/>: <h3>SEM RESULTADOS</h3>}
     </>
   );
 }

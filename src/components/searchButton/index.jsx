@@ -1,7 +1,7 @@
 function SearchButton(props){
     return(
         <>
-            <button onClick={(e)=>props.onButtonClick()}></button>
+            <button type="button" onClick={(e)=>props.onButtonClick()}></button>
         </>
     )
 }
