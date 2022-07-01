@@ -32,7 +32,7 @@ function App() {
           {list.length > 0 ? <List list={list} /> : <h3>SEM RESULTADOS</h3>}
         </div>
         <footer className="footerbox">
-          <h1>
+          <h1 >
             Desenvolvido por{" "}
             <a
               href="https://github.com/MarcosVini9999"
