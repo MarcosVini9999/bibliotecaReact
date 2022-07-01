@@ -13,7 +13,7 @@ function List({ list }) {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <Typography>Título: {book.title || "----TÍTULO NÃI INFORMADO----"}</Typography>
+                        <Typography>Título: {book.title || "----TÍTULO NÃO INFORMADO----"}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
